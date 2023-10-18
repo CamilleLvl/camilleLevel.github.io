@@ -1,0 +1,421 @@
+@font-face {
+  font-family: "Futura";
+  src: url("../Fonts/FuturaHand.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Display";
+  src: url("../Fonts/PlayfairDisplay-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Box";
+  src: url("../Fonts/ASafePlacetoFall.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Aaargh";
+  src: url("../Fonts/Aaargh.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Abigael";
+  src: url("../Fonts/absolutamente\ rou\ st.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Designer";
+  src: url("../Fonts/DESIGNER.otf") format("truetype");
+}
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+}
+*::selection {
+  background: #000101;
+  color: #fefeff;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "font-reg", serif;
+  background: #000101;
+  color: #fefeff;
+  transition: 0.7s ease-in-out;
+}
+.wrapper {
+  perspective: 900px;
+}
+.links.is-inview{
+  transition-delay:0.5s;
+}
+.appear {
+  opacity: 0;
+  transform: translateY(100%) rotateX(-80deg);
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  transition: 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.appear.is-inview {
+  transition-delay: 1s;
+  opacity: 1;
+  transform: none;
+}
+h2 {
+  font-size: calc(3rem + 5vw);
+  text-align: center;
+  color: rgb(217, 217, 217);
+  font-family: "font-bold", serif;
+  letter-spacing: 3px;
+}
+.title {
+  font-size: calc(1.5rem + 5vw);
+  letter-spacing: 0;
+}
+span {
+  display: inline-block;
+}
+a,
+a:visited {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  color: black;
+  transition: 0.1s linear;
+  font-size: 20px;
+}
+a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background: black;
+  height: 1px;
+  bottom: -4px;
+  left: 0;
+  transform-origin: left;
+  font-size:25px;
+}
+a:hover {
+  transform: scale(1.04);
+  color: rgb(217, 217, 217);
+}
+a:hover::after {
+  animation: animLink 1.4s infinite ease-in-out;
+}
+@keyframes animLink {
+  50% {
+    transform: scaleX(0.2);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+.img {
+  height: 395px;
+  width: 100vw;
+  max-width: 395px;
+  margin: 0 auto;
+  filter: grayscale(100%);
+  transition: 1.6s;
+}
+.img:hover {
+  filter: grayscale(10%);
+}
+.line {
+  height: 2px;
+  width: 70%;
+  margin: 0 auto;
+  background: #000101;
+  transition: 1s cubic-bezier(0.77, 0, 0.18, 1);
+  transition-delay: 0.45s;
+  opacity: 0;
+  transform: scaleX(0);
+}
+.line-wrapper.is-inview .line {
+  opacity: 1;
+  transform: scaleX(1);
+}
+/* paramètre par ordre d'apparition*/
+body{
+  margin: 0;
+}  
+.nav-list{
+  list-style: none;
+  text-decoration:none;
+  padding:1vw 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color:white;
+}
+.nav-items{
+  margin-right: 2rem;
+  text-transform:uppercase;
+  font-weight:600;
+}
+.nav-items a {
+  color:black;
+  letter-spacing:1,2px ;
+  font-size:calc(0.5rem + 0.6vw); 
+}
+.nav-items:first-child{
+margin-right: auto;
+margin-left: 2rem;
+}
+header {
+  height: 100vh;
+  position: relative;
+  margin: 0; /* Supprime la marge */
+  line-height: 1.5; /* Vous pouvez ajuster cette valeur selon vos préférences pour l'espacement entre les lignes */  
+  background: url(../Img/couleur_arc_en_ciel.jpg);
+}
+header::before,::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 100px 20px 0;
+}
+p {
+  text-transform: uppercase;
+  color: #222;
+  font-weight: 900;
+  color: transparent;
+  font-size: 0px;
+}
+p span {
+  font-family: "Designer", Helvetica, sans-serif;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  font-size: clamp(20px, 7vw, 50px);
+  color:black;
+}
+p span::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+}
+p:nth-child(1) {
+  font-weight: 300;
+  animation: txt-appearance 0s 1s forwards;
+}
+p:nth-child(2) {
+  animation: txt-appearance 0s 1.25s forwards;
+}
+p:nth-child(3) {
+  animation: txt-appearance 0s 1.50s forwards;
+}
+p:nth-child(1) span::after {
+  background: salmon;
+  animation: slide-in 0.75s ease-out forwards,
+  slide-out 0.75s 1s ease-out forwards;
+}
+p:nth-child(2) span::after {
+  background: royalblue;
+  animation: slide-in 0.75s 0.3s ease-out forwards,
+  slide-out 0.75s 1.3s ease-out forwards;
+}
+p:nth-child(3) span::after {
+  background: rgb(171, 84, 18);
+  animation: slide-in 0.75s 0.6s ease-out forwards,
+  slide-out 0.75s 1.3s ease-out forwards;
+}
+@keyframes slide-in {
+  100% {
+      transform: translateX(0%);
+  }
+}
+@keyframes slide-out {
+  100% {
+      transform: translateX(100%)
+  }
+}
+@keyframes txt-appearance {
+  100% {
+      color: #222;
+  }
+}
+.scroll-wrapper p {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-20%);
+  bottom: 7vw;
+  color:white;
+  font-size: calc(0.8rem + 0.8vw);
+}
+.about {
+  margin: 400px 0 250px;
+}
+.img1 {
+  background: url(../Img/photo.jpg);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 100%);
+}
+.h2-wrapper {
+  mix-blend-mode: exclusion;
+  margin: -220px 0 200px;
+}
+.about p {
+  width: 70%;
+  min-width: 280px;
+  text-align: center;
+  margin: 0 auto;
+  line-height: calc(7px + 4.5vw);
+  font-size: calc(1rem + 1vw);
+  letter-spacing: 1px;
+  font-family:"Aaargh";
+}
+.skills {
+  margin: 150px 0 200px;
+}
+.skills h2 {
+  margin-bottom: 150px;
+}
+.skills .wrapper {
+  margin: 30px 0;
+  font-size: calc(4rem + 5vw);
+}
+.skills .appear {
+  text-align: center;
+  transition-delay: 0.6s;
+}
+.skills .appear a{
+  font-size : 40px;
+}
+.skills p {
+  font-size: calc(1rem + 3vw);
+  font-family: "font-bold", serif;
+  letter-spacing: 4px;
+  color:black;
+  display: inline-block;
+  padding: 0 12px 12px;
+}
+.skills p:visited {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+  color: #fefeff;
+  transition: 0.2s linear;
+  font-size: calc(0.8rem + 0.8vw);
+}
+.skills p:hover {
+  transform: scale(1.04);
+  color: rgb(200, 150, 150);
+}
+.skills p:hover::after {
+  animation: animLink 1.8s infinite ease-in-out;
+}
+.skills p span {
+  font-size: calc(0.8rem + 0.8vw);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  line-height: 2;
+  text-align: justify;
+}
+.portfolio {
+  margin: 200px 0;
+}
+.projects-container {
+  margin-top: 100px;
+}
+.projects-container span {
+  font-family:"Aaargh";
+  display: block; /* Assure que le span occupe toute la largeur disponible */
+  text-align: center; /* Aligne le texte à gauche */
+  margin-top: 10px; /* Ajoute un espacement en haut pour l'éloigner de l'image */
+  padding-left: 0; /* Réinitialise la marge à gauche (par défaut) */
+  font-size: calc(0.6em + 1.5vw);
+}
+.project {
+  position: relative;
+  width: 60vw;
+  max-width: 600px;
+  margin: 50px 5vw;
+}
+.project::before {
+  content: "";
+  position: absolute;
+  height: 110%;
+  width: 100%;
+  top: -3px;
+  background: #fefeff;
+  transition: width 1s ease-out;
+  transition-delay: 0.85s;
+}
+.project.is-inview::before {
+  width: 0;
+}
+#p2 {
+  margin: 0 6vw 0 auto;
+}
+#p3 {
+  margin-left: 8vw;
+}
+.project img {
+  transition: 0.4s ease-out;
+  width: 100%;
+}
+.project:hover img {
+  filter: brightness(20%);
+}
+.project:hover .project-infos {
+  opacity: 1;
+  transform: translate(0, -50%);
+}
+.project-infos {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50px, -50%);
+  margin-left: 8vw;
+  transition: 0.4s ease-out;
+  opacity: 0;
+}
+.project-infos a {
+  font-size: calc(1rem + 3vw);
+}
+.project-infos p {
+  font-size: 2rem;
+  margin-top: 1.5vw;
+  color: #fefeff;
+}
+footer {
+  margin: 150px 0 120px;
+}
+footer p {
+  font-size: calc(1rem + 2vw);
+  margin: 25px 0;
+  text-align: center;
+}
+#l2 {
+  transition-delay: 1.2s;
+}
+#l3 {
+  transition-delay: 1.6s;
+}
+footer a {
+  font-family: "font-bold", serif;
+  color: #000101;
+  font-size: calc(1rem + 2vw);
+}
+.img2 {
+  background:url(../Img/poudrecouleur.jpg);
+}
